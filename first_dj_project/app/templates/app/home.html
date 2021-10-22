@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+</head>
+<body>
+    <h1>Выберите раздел</h1>
+    <ul>
+    {% for title, url in pages.items %}
+        <li><a href="{{ url }}">{{ title }}</a></li>
+        <br>
+    {% endfor %}
+    </ul>
+</body>
+</html>
