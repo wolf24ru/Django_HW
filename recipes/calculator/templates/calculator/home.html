@@ -1,0 +1,10 @@
+{% extends 'calculator/main_block.html' %}
+{% block content %}
+    {% for dish in menu %}
+        <p>
+            <a href="{{ dish }}">
+                {{ dish }}
+            </a>
+        </p>
+    {% endfor %}
+{% endblock %}

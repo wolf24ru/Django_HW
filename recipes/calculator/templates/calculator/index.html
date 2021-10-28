@@ -1,0 +1,27 @@
+{% extends 'calculator/main_block.html' %}
+    {% block content %}
+    <a href="{% url 'calculator:home'%}" class="m-5"> На начальную</a>
+    {% if dish%}
+    <table class="table table-primary table-hover">
+        <thead>
+        <tr>
+         <th scope="col">№</th>
+         <th scope="col">Ингридиент</th>
+         <th scope="col">Количество</th>
+        </tr> 
+        </thead> 
+        <tbody>        
+            {% for ingredient, amount in dish.items %}
+            <tr>            
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ ingredient }}</td>
+                <td>{{ amount }}</td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p>Такого рецепта не знаю :(</p>
+    {%endif%}
+{% endblock %}
