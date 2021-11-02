@@ -6,6 +6,6 @@ class Phone(models.Model):
     price = models.IntegerField('Цена')
     image = models.ImageField(upload_to='images', verbose_name='Изображение')
     release_date = models.DateField('Дата релиза')
-    lte_exists = ... #TODO узнать типа данных
+    lte_exists = models.BooleanField()
     slug = models.SlugField()
 
