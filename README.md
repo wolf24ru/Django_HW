@@ -1,5 +1,3 @@
-# Рецепты
-
 ## Домашнее задание по курсу Djangо
 
  - Первое домашнее задание [Знакомство с Django](https://github.com/wolf24ru/Django_HW/tree/HW_1) - (согласно [заданию](https://github.com/netology-code/dj-homeworks/tree/drf/1.1-first-project))
