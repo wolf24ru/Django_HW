@@ -1,3 +1,4 @@
+from models import Phone
 from django.shortcuts import render, redirect
 
 
@@ -7,11 +8,17 @@ def index(request):
 
 def show_catalog(request):
     template = 'catalog.html'
-    context = {}
+    phones = Phone.objects.all()
+    context = {
+        'phones': phones,
+    }
     return render(request, template, context)
 
 
 def show_product(request, slug):
     template = 'product.html'
-    context = {}
+    phone = Phone.objects.filter(slug__iexact=slug)
+    context = {
+        'phone': phone
+    }
     return render(request, template, context)
