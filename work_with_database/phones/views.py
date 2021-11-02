@@ -9,6 +9,17 @@ def index(request):
 def show_catalog(request):
     template = 'catalog.html'
     phones = Phone.objects.all()
+    sort = request.GET.get('sort')
+    # TODO Придумтаь как отсортировать полученый объект
+    match sort:
+        case 'name':
+            ...
+        case 'cheap':
+            ...
+        case 'expensive':
+            ...
+        case _:
+            ...
     context = {
         'phones': phones,
     }
