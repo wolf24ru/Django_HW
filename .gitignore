@@ -41,6 +41,10 @@ __init__.py
 pip-log.txt
 pip-delete-this-directory.txt
 
+#Django file
+migrations/
+.migrations/
+
 # Unit test / coverage reports
 htmlcov/
 .tox/
