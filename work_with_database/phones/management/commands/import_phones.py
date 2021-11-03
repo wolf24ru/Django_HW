@@ -13,10 +13,11 @@ class Command(BaseCommand):
             phones = list(csv.DictReader(file, delimiter=';'))
 
         for phone in phones:
-            Phone.id = phone['id']
-            Phone.name = phone['name']
-            Phone.image = phone['image']
-            Phone.price = phone['price']
-            Phone.release_date = phone['release_date']
-            Phone.lte_exists = phone['lte_exists']
-        Phone.save()
+            bd_write = Phone(
+                id=phone['id'],
+                name=phone['name'],
+                image=phone['image'],
+                price=phone['price'],
+                release_date=phone['release_date'],
+                lte_exists=phone['lte_exists'])
+            bd_write.save()
