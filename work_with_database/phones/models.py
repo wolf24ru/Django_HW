@@ -1,5 +1,5 @@
 from django.db import models
-
+from autoslug import AutoSlugField
 
 class Phone(models.Model):
     name = models.TextField('Имя', null=False)
@@ -7,5 +7,5 @@ class Phone(models.Model):
     image = models.ImageField(upload_to='images', verbose_name='Изображение')
     release_date = models.DateField('Дата релиза')
     lte_exists = models.BooleanField()
-    slug = models.SlugField()
+    slug = AutoSlugField(populate_from='name')
 

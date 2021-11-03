@@ -1,5 +1,7 @@
+from .models import Phone
 from django.contrib import admin
 
+@admin.register(Phone)
 class PhoneAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
-# Register your models here.
+    list_display = ('name', 'slug')
