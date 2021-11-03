@@ -49,10 +49,11 @@ MIDDLEWARE = [
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    # TODO Создать нормальное подключение к БД
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'netology_import_phones',
+        'USER': 'phones',
+        'PASSWORD': '12345678',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }

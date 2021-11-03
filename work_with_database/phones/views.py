@@ -1,4 +1,4 @@
-from models import Phone
+from .models import Phone
 from django.shortcuts import render, redirect
 
 
@@ -9,17 +9,13 @@ def index(request):
 def show_catalog(request):
     template = 'catalog.html'
     phones = Phone.objects.all()
-    sort = request.GET.get('sort')
-    # TODO Придумтаь как отсортировать полученый объект
-    match sort:
+    match request.GET.get('sort'):
         case 'name':
-            ...
-        case 'cheap':
-            ...
-        case 'expensive':
-            ...
-        case _:
-            ...
+            phones = phones.order_by('name')
+        case 'max_price':
+            phones = phones.order_by('-price')
+        case 'min_price':
+            phones = phones.order_by('price')
     context = {
         'phones': phones,
     }
@@ -28,7 +24,8 @@ def show_catalog(request):
 
 def show_product(request, slug):
     template = 'product.html'
-    phone = Phone.objects.filter(slug__iexact=slug)
+    phone = Phone.objects.get(slug=slug)
+    print(phone)
     context = {
         'phone': phone
     }
