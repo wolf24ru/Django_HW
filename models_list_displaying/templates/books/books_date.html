@@ -9,9 +9,7 @@
         </div>
         {%for book in books%}
         <div class="book col-md-4">
-            <h2>{{book.name}}</h2>
-            <p>Автор: {{book.author}}</p>
-            <p>Дата публикации: {{book.pub_date}}</p>
+            <p>{{book}}</p>
         </div>
         {%endfor%}
     </div>
