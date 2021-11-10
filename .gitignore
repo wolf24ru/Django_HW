@@ -43,8 +43,8 @@ pip-delete-this-directory.txt
 
 #Django file
 migrations/
-.migrations
-migrations
+*migrations/
+*.migrations/
 .migrations/
 
 # Unit test / coverage reports
