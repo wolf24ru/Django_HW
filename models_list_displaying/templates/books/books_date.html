@@ -9,8 +9,18 @@
         </div>
         {%for book in books%}
         <div class="book col-md-4">
-            <p>{{book}}</p>
+            <h2>{{book.name}}</h2>
+            <p>Автор: {{book.author}}</p>
+            <p>Дата публикации: {{book.pub_date}}</p>
         </div>
         {%endfor%}
+        <div class="">
+            {% if prev_date %}
+            <a href="/books/{{prev_date}}"> < {{prev_date}} </a>
+            {% endif %}
+            {% if nex_date %}
+            <a href="/books/{{nex_date}}"> {{nex_date}} > </a>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}
