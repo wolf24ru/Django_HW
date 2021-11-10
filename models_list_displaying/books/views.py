@@ -1,6 +1,7 @@
 from .models import Book
-from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
+from books.castompaginator import IterPaginator
+
 
 def index(request):
     return redirect('books')
@@ -14,24 +15,21 @@ def books_view(request):
     return render(request, template, context)
 
 
-def books_date_view(request, pub_date_req):
+def books_date_view(request, pub_date_req: str):
     template = 'books/books_date.html'
     objects_list = Book.objects.all()
     date_books = []
     paginator_dict = {}
-    # current_books = objects_list.filter(pub_date=pub_date)
-    for book in objects_list.order_by('pub_date'):
-        paginator_dict.update({book.pub_date: objects_list.filter(pub_date=book.pub_date)})
-        if book.pub_date not in date_books:
-            date_books.append(book.pub_date)
-    #TODO сделать пангинатор из имеющихся данных.
 
-    # date_list = [i.pub_date for i in objects_list]
-    # paginator = Paginator(paginator_dict, 1)
-    # current_page = request.GET.get('page', pub_date_req)
-    # page = paginator.get_page(current_page)
+    for book in objects_list.order_by('pub_date'):
+        paginator_dict.update({str(book.pub_date): objects_list.filter(pub_date=book.pub_date)})
+        if book.pub_date not in date_books:
+            date_books.append(str(book.pub_date))
+    iter_paginator = IterPaginator(date_books, pub_date_req)
+
     context = {
-        # 'page': page,
-        # 'books': page.object_list,
+        'nex_date': iter_paginator.next(),
+        'prev_date': iter_paginator.prev(),
+        'books': paginator_dict[pub_date_req],
     }
     return render(request, template, context)
