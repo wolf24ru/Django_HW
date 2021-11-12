@@ -1,4 +1,0 @@
-Django
-django-autoslug
-psycopg2-binary
-Pillow
