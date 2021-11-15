@@ -34,7 +34,6 @@ class ArticleTag(models.Model):
     article = models.ForeignKey(Article, related_name='t_tag', on_delete=models.CASCADE)
     tag = models.ForeignKey(Tag, related_name='t_article', on_delete=models.CASCADE)
     is_main = models.BooleanField()
-    # TODO добавить уникальности is_main
 
     class Meta:
         verbose_name = 'Тег к статьи'
