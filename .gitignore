@@ -141,10 +141,6 @@ dmypy.json
 
 # Django #
 *.pyc
-
-media
-
-# Backup files #
 *.bak
 
 # If you are using PyCharm #
