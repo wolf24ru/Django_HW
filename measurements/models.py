@@ -1,7 +1,19 @@
 from django.db import models
 
 
-class Project(models.Model):
+class TimestampFields(models.Model):
+    created_at = models.DateTimeField(
+        auto_now_add=True
+    )
+    updated_at = models.DateTimeField(
+        auto_now=True
+    )
+
+    class Meta:
+        abstract = True
+
+
+class Project(TimestampFields):
     """Объект на котором проводят измерения."""
 
     name = models.TextField()
