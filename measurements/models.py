@@ -13,7 +13,9 @@ class Project(models.Model):
     updated_at = models.DateTimeField(
         auto_now=True
     )
-
+    #
+    # class Meta:
+    #     abstract = True
 
 class Measurement(models.Model):
     """Измерение температуры на объекте."""
