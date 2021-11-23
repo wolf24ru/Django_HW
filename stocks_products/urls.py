@@ -1,7 +1,7 @@
-"""simple_crud URL Configuration
+"""stocks_products URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.1/topics/http/urls/
+    https://docs.djangoproject.com/en/3.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -14,18 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
-from measurements.api_view import ProjectViewSet, MeasurementViewSet
-from rest_framework import routers
-
-project_router = routers.DefaultRouter()
-project_router.register('', ProjectViewSet, basename='project')
-
-measurement_router = routers.DefaultRouter()
-measurement_router.register('', MeasurementViewSet, basename='measurement')
+from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/project/', include(project_router.urls)),
-    path('api/v1/measurement/', include(measurement_router.urls))
+    path('api/v1/', include('logistic.urls')),
 ]
