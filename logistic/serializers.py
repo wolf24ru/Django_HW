@@ -1,14 +1,28 @@
 from rest_framework import serializers
 
+from logistic.models import Product, Stock, StockProduct
+
 
 class ProductSerializer(serializers.ModelSerializer):
+    title = serializers.CharField(max_length=60)
+    description = serializers.CharField()
     # настройте сериализатор для продукта
-    pass
+
+    class Meta:
+        model = Product
+        fields = "__all__"
 
 
 class ProductPositionSerializer(serializers.ModelSerializer):
     # настройте сериализатор для позиции продукта на складе
-    pass
+    # PrimaryKeyRelatedField
+    product = serializers.IntegerField()
+    quantity = serializers.IntegerField()
+    # price =
+
+    class Meta:
+        model = StockProduct
+        fields = ['id', 'product', quantity]
 
 
 class StockSerializer(serializers.ModelSerializer):
@@ -41,3 +55,7 @@ class StockSerializer(serializers.ModelSerializer):
         # с помощью списка positions
 
         return stock
+
+    class Meta:
+        model = Stock
+        fields = ["address", "positions"]
