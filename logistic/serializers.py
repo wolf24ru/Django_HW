@@ -18,11 +18,11 @@ class ProductPositionSerializer(serializers.ModelSerializer):
     # PrimaryKeyRelatedField
     product = serializers.IntegerField()
     quantity = serializers.IntegerField()
-    # price =
+    price = serializers.DecimalField(max_digits=18, decimal_places=2)
 
     class Meta:
         model = StockProduct
-        fields = ['id', 'product', quantity]
+        fields = ['product', 'quantity', 'price']
 
 
 class StockSerializer(serializers.ModelSerializer):
