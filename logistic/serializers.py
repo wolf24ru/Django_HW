@@ -5,7 +5,6 @@ from logistic.models import Product, Stock, StockProduct
 class ProductSerializer(serializers.ModelSerializer):
     title = serializers.CharField(max_length=60)
     description = serializers.CharField()
-    # настройте сериализатор для продукта
 
     class Meta:
         model = Product
@@ -13,7 +12,6 @@ class ProductSerializer(serializers.ModelSerializer):
 
 
 class ProductPositionSerializer(serializers.ModelSerializer):
-    # настройте сериализатор для позиции продукта на складе
     quantity = serializers.IntegerField()
     price = serializers.DecimalField(max_digits=18, decimal_places=2)
 
@@ -25,7 +23,6 @@ class ProductPositionSerializer(serializers.ModelSerializer):
 class StockSerializer(serializers.ModelSerializer):
     positions = ProductPositionSerializer(many=True)
 
-    # настройте сериализатор для склада
     class Meta:
         model = Stock
         fields = ["address", "positions"]
@@ -56,3 +53,5 @@ class StockSerializer(serializers.ModelSerializer):
                 'price': position['price']
             })
         return stock
+
+
