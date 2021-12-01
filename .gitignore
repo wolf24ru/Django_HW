@@ -28,8 +28,8 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
-*/__init__.py
-__init__.py
+#*/__init__.py
+#__init__.py
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -42,9 +42,9 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 #Django file
-migrations/
-*.migrations/
-.migrations/
+#migrations/
+#*.migrations/
+#.migrations/
 
 # Unit test / coverage reports
 htmlcov/
