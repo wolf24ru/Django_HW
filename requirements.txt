@@ -4,3 +4,4 @@ django
 djangorestframework
 psycopg2-binary
 model_bakery
+pytest-cov
