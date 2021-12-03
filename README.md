@@ -7,3 +7,4 @@
  - Пятое Домашнее задание [API CRUD](https://github.com/wolf24ru/Django_HW/tree/HW_5) - (согласно [заданию](https://github.com/netology-code/dj-homeworks/tree/drf/3.1-drf-intro/simple_crud))
  - Шестое Домашнее задание [API CRUD-2](https://github.com/wolf24ru/Django_HW/tree/HW_6) - (согласно [заданию](https://github.com/netology-code/dj-homeworks/tree/drf/3.2-crud/stocks_products))
  - Седьмое Домашнее задание [Разделение доступа в DRF](https://github.com/wolf24ru/Django_HW/tree/HW_7) - (согласно [заданию](https://github.com/netology-code/dj-homeworks/tree/drf/3.3-permissions/api_with_restrictions))
+ - Восьмое Домашнее задание [Тестирование Django](https://github.com/wolf24ru/Django_HW/tree/HW_8) - (согласно [заданию](https://github.com/netology-code/dj-homeworks/blob/drf/3.4-django-testing/django_testing/README.md))
