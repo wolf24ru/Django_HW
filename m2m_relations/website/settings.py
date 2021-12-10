@@ -22,7 +22,9 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'super-secret-key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.getenv('DEBUG'))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    os.getenv('MAIN_HOST'),
+]
 
 
 SITE_ID = 1
